@@ -1,6 +1,7 @@
 number = int(input("Enter a number to see its multiplication table: "))
-X = number
-for Y in range(1, 11):
-    Z = X * Y
-    print(X, "*", Y, "=", Z)
+
+for multiplier in range(1, 11):  # Iterate from 1 to 10
+    product = number * multiplier
+    print("{} * {} = {}".format(number, multiplier, product))
+
 
