@@ -1,43 +1,39 @@
-shopping_list = []
-
-print("Welcome to our shopping list manager")
-print("Please choose in the options below:")
-print("A. add item")
-print("B. remove item")
-print("C. display items")
-print("D. EXIT")
-
-def add_item():
-    user_input = input("Enter the name of the item you want to add: ").capitalize()
-    shopping_list.append(user_input)
-    
-
-def remove_item():
-    user_input = input("Enter the name of the item you want to remove: ").capitalize()
-    if user_input in shopping_list:
-        shopping_list.remove(user_input)
-        print("The item has been removed successfully")
-    else:
-        print("The item you are trying to remove is not in our shopping list")
-    
-
 def display_menu():
-    print(shopping_list)
+    print("Shopping List Manager")
+    print("1. Add Item")
+    print("2. Remove Item")
+    print("3. View List")
+    print("4. Exit")
 
-def exit_app():
-    print("Thank you for shopping with us. we will be happy seeing you coming back")
-    quit()
-
-while True:
-    user_choice = input("Choose in the options above: ").upper()
-
-    if user_choice == "A":
-        add_item()
-    if user_choice == "B":
-        remove_item()
-    if user_choice == "C":
+def main():
+    shopping_list = []
+    while True:
         display_menu()
-    if user_choice == "D":
-        exit_app()
-    print("done, thank you!")
+        choice = input("Enter your choice: ")
 
+        if choice == '1':
+            # Prompt for and add an item
+            user_input = input("Enter the name of the item you want to add: ").capitalize()
+            shopping_list.append(user_input)
+
+        elif choice == '2':
+            # Prompt for and remove an item
+            user_input = input("Enter the name of the item you want to remove: ").capitalize()
+            if user_input in shopping_list:
+                shopping_list.remove(user_input)
+                print("The item has been removed successfully")
+            else:
+                print("The item you are trying to remove is not in our shopping list")
+
+        elif choice == '3':
+            # Display the shopping list
+            print(shopping_list)
+
+        elif choice == '4':
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
