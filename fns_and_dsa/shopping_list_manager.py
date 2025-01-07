@@ -21,7 +21,7 @@ def remove_item():
         print("The item you are trying to remove is not in our shopping list")
     
 
-def display_items():
+def display_menu():
     print(shopping_list)
 
 def exit_app():
@@ -36,7 +36,8 @@ while True:
     if user_choice == "B":
         remove_item()
     if user_choice == "C":
-        display_items()
+        display_menu()
     if user_choice == "D":
         exit_app()
     print("done, thank you!")
+
